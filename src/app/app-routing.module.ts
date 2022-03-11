@@ -10,6 +10,7 @@ const routes: Routes = [
     {path:'', component: HomepagesComponent},
     {path:'post/:id', component: PostPageComponent}
   ] },
+  {path:'admin', loadChildren: './admin/admin.module#AdminModule'}
 ];
 
 @NgModule({
