@@ -11,7 +11,10 @@ import { EditPageComponent } from './edit-page/edit-page.component';
   declarations: [AdminLayoutComponent, LoginPageComponent, DashboardPageComponent, CreatePageComponent, EditPageComponent],
   imports: [CommonModule, RouterModule.forChild([{ path: '', component: AdminLayoutComponent, children: [
       {path:'', redirectTo: '/admin/login', pathMatch: 'full'},
-      {path:'login', component: LoginPageComponent}
+      {path:'login', component: LoginPageComponent},
+      {path: 'dashboard', component: DashboardPageComponent},
+      {path: 'create', component: CreatePageComponent},
+      {path: 'posts/:id/edit', component: EditPageComponent},
   ]}])],
   exports: [RouterModule],
 })
