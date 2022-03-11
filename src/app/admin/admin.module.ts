@@ -3,10 +3,16 @@ import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { LoginPageComponent } from "./login-page/login-page.component";
 import { AdminLayoutComponent } from "./shared/components/admin-layout/admin-layout.component";
+import { DashboardPageComponent } from './dashboard-page/dashboard-page.component';
+import { CreatePageComponent } from './create-page/create-page.component';
+import { EditPageComponent } from './edit-page/edit-page.component';
 
 @NgModule({
-  declarations: [AdminLayoutComponent, LoginPageComponent],
-  imports: [CommonModule, RouterModule.forChild([{ path: '', component: 'AdminLayoutComponent', children: []}])],
+  declarations: [AdminLayoutComponent, LoginPageComponent, DashboardPageComponent, CreatePageComponent, EditPageComponent],
+  imports: [CommonModule, RouterModule.forChild([{ path: '', component: AdminLayoutComponent, children: [
+      {path:'', redirectTo: '/admin/login', pathMatch: 'full'},
+      {path:'login', component: LoginPageComponent}
+  ]}])],
   exports: [RouterModule],
 })
 export class AdminModule {}
