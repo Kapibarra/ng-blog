@@ -18,6 +18,8 @@ form: FormGroup;
   }
 
   submit() {
+    console.log();
+    
     if (this.form.invalid) {
       return
     }
